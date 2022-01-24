@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- ROS2 (Foxy)
+- ROS2 (Galactic)
 - Adafruit BNO055 IMU
 - Sensor_msgs/Imu
 
@@ -24,10 +24,10 @@ colcon build --symlink-install
 ```bash
 source /opt/ros/foxy/setup.bash
 source ~/ros2_ws/install/local_setup.bash
-ros2 run rclpy_bno055_publisher bno055_publisher
+ros2 run bno055_publisher bno055
 ```
 
-## Listen topic
+## Listen to topic
 
 ```bash
 ros2 topic echo /pub_bno055 
