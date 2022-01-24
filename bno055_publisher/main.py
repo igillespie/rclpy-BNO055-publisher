@@ -11,13 +11,12 @@ import adafruit_bno055
 class bno055_ros2(Node):
 
     def __init__(self) -> None:
-        super().__init__("scripts_main")
+        super().__init__("bno055")
 
         self.pub = self.create_publisher(Imu, 'pub_bno055',10)
 
         self.declare_parameter('pub_rate',30)
-        # self.declare_parameter('i2c_bus',1)
-        self.declare_parameter('i2c_address',40)
+        self.declare_parameter('i2c_address', 40) #40 is hexidecimal 0x28 
 
         hz = self.get_parameter('pub_rate').get_parameter_value().integer_value
         # i2c_bus = self.get_parameter('i2c_bus').get_parameter_value().integer_value
@@ -31,9 +30,9 @@ class bno055_ros2(Node):
         self.last_val = 0xFFFF
 
         # Start Loop ============================================================
-        self.get_logger().info(str())
         period = 1/hz
-        self.get_logger().info('period: '+str(period))
+        self.get_logger().info('Starting up bno0522 IMU')
+        self.get_logger().info('at hz: '+str(hz))
         
         self.create_timer(period,self.publish_as_imu)
 

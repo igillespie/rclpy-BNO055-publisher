@@ -18,7 +18,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'scripts_main = '+ package_name +'.main:ros_main',
+            'bno055 = '+ package_name +'.main:ros_main',
         ],
     }
 )
