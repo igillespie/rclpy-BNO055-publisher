@@ -46,7 +46,7 @@ class bno055_ros2(Node):
 
             msg = Imu()
             msg.header.stamp = self.get_clock().now().to_msg()
-            msg.header.frame_id = 'imu'
+            msg.header.frame_id = 'imu_link'
             msg.orientation.x = float(qx)
             msg.orientation.y = float(qy)
             msg.orientation.z = float(qz)
