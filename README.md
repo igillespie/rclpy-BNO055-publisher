@@ -22,7 +22,7 @@ colcon build --symlink-install
 ## Run
 
 ```bash
-source /opt/ros/foxy/setup.bash
+source /opt/ros/galactic/setup.bash
 source ~/ros2_ws/install/local_setup.bash
 ros2 run bno055_publisher bno055
 ```
