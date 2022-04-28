@@ -38,7 +38,7 @@ class bno055_ros2(Node):
         # 40 is 0x28
         # 41 is 0x29
         self.sensor = adafruit_bno055.BNO055_I2C(i2c, i2c_address)
-        self.sensor.mode = adafruit_bno055.NDOF_FMC_OFF_MODE
+        #self.sensor.mode = adafruit_bno055.NDOF_FMC_OFF_MODE
         #self.get_logger().info('Checking calibration')
         
         #self.get_logger().info('BNO055 not calibrated')
